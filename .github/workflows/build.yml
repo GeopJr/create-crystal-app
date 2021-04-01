@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+      - name: Cache shards
+        uses: actions/cache@v2
+        with:
+          path: lib
+          key: ${{ runner.os }}-shards-${{ hashFiles('**/shard.lock') }}
+      - name: Install shards
+        run: shards check || shards install --ignore-crystal-version
+      - name: Run tests
+        run: crystal spec
+      - name: Build
+        run: shards build
+      - name: Check formatting
+        run: crystal tool format; git diff --exit-code
+        if: matrix.os == 'ubuntu-latest'

@@ -1,0 +1,19 @@
+{{#kemal}}
+require "kemal"
+
+{{/kemal}}
+# TODO: Write documentation for `{{ module_name_capitalized }}`
+module {{ module_name_capitalized }}
+  VERSION = {{ version_command }}
+  
+  {{#kemal}}
+  get "/" do
+    "Hello World!"
+  end
+  
+  Kemal.run
+  {{/kemal}}
+  {{^kemal}}
+  # TODO: Put your code here
+  {{/kemal}}
+end

@@ -1,0 +1,34 @@
+version: 2.0
+shards:
+  baked_file_system:
+    git: https://github.com/schovi/baked_file_system.git
+    version: 0.9.8+git.commit.fd6ba88eb227400954c430bb946382de85809240
+
+  compiled_license:
+    git: https://github.com/elorest/compiled_license.git
+    version: 0.1.3+git.commit.307ab40b4431f454facb832b4cec7986241c264d
+
+  cor:
+    git: https://github.com/watzon/cor.git
+    version: 0.1.0+git.commit.9c9e51ac6168f3bd4fdc51d679b65de09ef76cac
+
+  crustache:
+    git: https://github.com/makenowjust/crustache.git
+    version: 2.4.3+git.commit.58b2d188779dbb77309a2d167a116443b2a711d9
+
+  term-cursor:
+    git: https://github.com/crystal-term/cursor.git
+    version: 0.1.0+git.commit.8805d5f686d153db92cf2ce3333433f8ed3708d0
+
+  term-prompt:
+    git: https://github.com/crystal-term/prompt.git
+    version: 0.1.0+git.commit.bf2b17f885a6c660aea0dda62b0b9da4343ab295
+
+  term-reader:
+    git: https://github.com/crystal-term/reader.git
+    version: 0.1.0+git.commit.e174733435c96c745bee31ac5c5d4def3ccf4285
+
+  term-screen:
+    git: https://github.com/crystal-term/screen.git
+    version: 0.1.0+git.commit.96a06e1ee015e38013822dc31288a46d35056ed2
+

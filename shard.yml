@@ -1,0 +1,26 @@
+name: create-crystal-app
+version: 0.1.0
+
+authors:
+  - Evangelos Paterakis <evan@geopjr.dev>
+
+targets:
+  create-crystal-app:
+    main: src/create-crystal-app.cr
+
+dependencies:
+  term-prompt:
+    github: crystal-term/prompt
+  compiled_license:
+    github: elorest/compiled_license
+    branch: master
+  crustache:
+    github: MakeNowJust/crustache
+    branch: master
+  baked_file_system:
+    github: schovi/baked_file_system
+    branch: master
+
+crystal: 1.0.0
+
+license: MIT

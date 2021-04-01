@@ -1,0 +1,28 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal:latest-alpine
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update Libs
+        run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
+      - name: Build
+        run: shards build --production --release --static --no-debug --ignore-crystal-version
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body: The build is static linked. TODO add changelogs
+          draft: true
+          files: bin/create-crystal-app
+          fail_on_unmatched_files: files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

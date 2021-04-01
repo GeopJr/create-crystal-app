@@ -1,0 +1,42 @@
+# {{ project_name }}
+
+TODO: Write a description here
+
+## Installation
+
+{{#lib}}
+1. Add the dependency to your `shard.yml`:
+
+   ```yaml
+   dependencies:
+     {{ module_name }}:
+       git: # TODO: Write where the shard is located
+   ```
+
+2. Run `shards install`
+{{/lib}}
+{{^lib}}
+TODO: Write installation instructions here
+{{/lib}}
+
+## Usage
+
+{{#lib}}
+```crystal
+require "{{ module_name }}"
+```
+
+{{/lib}}
+TODO: Write usage instructions here
+
+## Development
+
+TODO: Write development instructions here
+
+## Contributing
+
+TODO: Write contributing instructions here
+
+## Contributors
+
+- {{ author }} - creator and maintainer

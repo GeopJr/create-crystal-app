@@ -1,0 +1,21 @@
+name: {{ project_name }}
+version: 0.1.0
+
+authors:
+  - {{ author }} <{{ email }}>
+
+{{^lib}}
+targets:
+  {{ module_name }}:
+    main: src/{{ module_name }}.cr
+
+{{/lib}}
+{{#kemal}}
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+{{/kemal}}
+crystal: {{ crystal_version }}
+
+license: {{ license }}
