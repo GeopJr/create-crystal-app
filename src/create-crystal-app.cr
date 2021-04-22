@@ -129,8 +129,8 @@ module Create::Crystal::App
 
   ci = prompt.select("Choose a CI:", cis.keys << "I would like to pick one later")
 
-  license = prompt.select("Choose a license:", licenses.keys << "I would like to pick one later")
-  coc = prompt.select("Choose a Code of Conduct:", cocs.keys << "I would like to pick one later")
+  license = prompt.select("Choose a license:", licenses.keys.sort { |x, y| x <=> y } << "I would like to pick one later")
+  coc = prompt.select("Choose a Code of Conduct:", cocs.keys.sort { |x, y| x <=> y } << "I would like to pick one later")
 
   continue = prompt.yes?("Are you sure you want to continue?")
   print_console("OK! Init was aborted.", "success", true) if !continue
